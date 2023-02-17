@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+
+    // Get the input from the user
+    cout << "Enter values for a, b, and c: ";
+    cin >> a >> b >> c;
+
+    // Check which number is the greatest
+    if (a > b && a > c) {
+        cout << "a is greatest" << endl;
+    }
+    else if (b > c) {
+        cout << "b is greatest" << endl;
+    }
+    else {
+        cout << "c is greatest" << endl;
+    }
+
+    return 0;
+}

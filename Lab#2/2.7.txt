@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char day;
+
+    // Get the input from the user
+    cout << "Enter a letter corresponding to a day of the week:" << endl;
+    cout << "m for Monday" << endl;
+    cout << "t for Tuesday" << endl;
+    cout << "w for Wednesday" << endl;
+    cout << "h for Thursday" << endl;
+    cout << "f for Friday" << endl;
+    cout << "s for Saturday" << endl;
+    cout << "u for Sunday: ";
+    cin >> day;
+
+    // Use a switch statement to display the day of the week
+    switch (day) {
+        case 'm':
+            cout << "Monday" << endl;
+            break;
+        case 't':
+            cout << "Tuesday" << endl;
+            break;
+        case 'w':
+            cout << "Wednesday" << endl;
+            break;
+        case 'h':
+            cout << "Thursday" << endl;
+            break;
+        case 'f':
+            cout << "Friday" << endl;
+            break;
+        case 's':
+            cout << "Saturday" << endl;
+            break;
+        case 'u':
+            cout << "Sunday" << endl;
+            break;
+        default:
+            cout << "Invalid input" << endl;
+    }
+
+    return 0;
+}

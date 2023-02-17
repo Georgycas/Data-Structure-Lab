@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, temp, i, j;
+    cout << "Enter a number of array's size for a series of numbers saving: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter a series of numbers: ";
+    for (i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Bubble sort
+    for (i = 0; i < n; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Print the sorted odd numbers
+    cout << "After sorting, output sequence: ";
+    for (i = 0; i < n; i++) {
+        if (arr[i] % 2 != 0) {
+            cout << arr[i] << " ";
+        }
+    }
+
+    // Print the sorted even numbers
+    for (i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) {
+            cout << arr[i] << " ";
+        }
+    }
+
+    return 0;
+}

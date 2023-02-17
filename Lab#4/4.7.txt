@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cout << "Enter length of array: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter each element in array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    double average = (double)sum / n;
+    cout << "Average value in array: " << average << endl;
+    return 0;
+}

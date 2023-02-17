@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double marks[5], sum = 0, total_marks, percentage;
+
+    // Get the input from the user
+    cout << "Enter marks of 5 subjects: ";
+    for(int i=0; i<5; i++) {
+        cin >> marks[i];
+        sum += marks[i];
+    }
+
+    cout << "Enter assumption total number: ";
+    cin >> total_marks;
+
+    // Calculate the percentage
+    percentage = (sum/total_marks) * 100;
+
+    // Display the result
+    cout << "Sum = " << sum << endl;
+    cout << "Percentage = " << percentage << endl;
+
+    return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Enter total number of monkeys in a group: ";
+    cin >> n;
+    cout << "Enter m value: ";
+    cin >> m;
+
+    // create an array to represent the monkeys
+    int monkeys[n];
+    for (int i = 0; i < n; i++) {
+        monkeys[i] = i;
+    }
+
+    // eliminate the monkeys one by one
+    int current_monkey = 0;
+    while (n > 1) {
+        // find the monkey to be eliminated
+        int monkey_to_eliminate = (current_monkey + m - 1) % n;
+        // remove the monkey from the array
+        for (int i = monkey_to_eliminate; i < n - 1; i++) {
+            monkeys[i] = monkeys[i + 1];
+        }
+        // move to the next monkey
+        current_monkey = monkey_to_eliminate;
+        n--;
+    }
+
+    // print the king's number
+    cout << "The king will be " << monkeys[0] << endl;
+    return 0;
+}
+

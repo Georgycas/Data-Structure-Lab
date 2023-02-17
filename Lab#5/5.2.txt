@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+int main() {
+    std::vector<int> numbers;
+    int n;
+
+    std::cout << "Enter a series of integer numbers: ";
+    while (std::cin >> n) {
+        numbers.push_back(n);
+    }
+
+    auto it_odd = std::max_element(numbers.begin(), numbers.end(),
+                                   [](int a, int b) { return (a % 2 != 0) && (a < b); });
+    auto it_even = std::min_element(numbers.begin(), numbers.end(),
+                                    [](int a, int b) { return (a % 2 == 0) && (a < b); });
+
+    if (it_odd != numbers.end() && it_even != numbers.end()) {
+        int result = std::abs(*it_odd - *it_even);
+        std::cout << "Result is: " << result << std::endl;
+    }
+    else {
+        std::cout << "Not enough numbers to compute the result." << std::endl;
+    }
+
+    return 0;
+}

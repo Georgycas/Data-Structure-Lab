@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int cuts;
+    cout << "Enter how many cuts you want: ";
+    cin >> cuts;
+    int pieces = cuts * (cuts + 1) / 2 + 1;
+    cout << "Pieces will be: " << pieces << endl;
+    return 0;
+}

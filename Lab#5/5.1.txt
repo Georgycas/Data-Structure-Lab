@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+struct PetriDish {
+    int label;
+    int orig_num;
+    int new_num;
+    double pr;
+};
+
+bool compare_pr(const PetriDish& p1, const PetriDish& p2) {
+    return p1.pr < p2.pr;
+}
+
+int main() {
+    int num_dishes;
+    cout << "Enter total number of Petri dishes: ";
+    cin >> num_dishes;
+
+    vector<PetriDish> dishes(num_dishes);
+    for (int i = 0; i < num_dishes; i++) {
+        cout << "Enter Petri dish label, original bacterial number, new bacterial number after one hour reproduction: ";
+        cin >> dishes[i].label >> dishes[i].orig_num >> dishes[i].new_num;
+        dishes[i].pr = (double)dishes[i].new_num / dishes[i].orig_num;
+    }
+
+    // Sort the Petri dishes by their reproduction rates
+    sort(dishes.begin(), dishes.end(), compare_pr);
+
+    // Group the Petri dishes by sub-species based on their rates
+    int num_a = 0;
+    int num_b = 0;
+    for (int i = 0; i < num_dishes; i++) {
+        if (dishes[i].pr - dishes[0].pr < dishes[num_dishes-1].pr - dishes[i].pr) {
+            num_a++;
+        } else {
+            num_b++;
+        }
+    }
+
+    // Print the results
+    cout << "Running results:\n";
+    cout << num_a << " in A sub-species and Petri dish labels from smaller PR to bigger PR are ";
+    for (int i = 0; i < num_a; i++) {
+        cout << dishes[i].label << " ";
+    }
+    cout << "\n";
+    cout << num_b << " in B sub-species and Petri dish labels from smaller PR to bigger PR are ";
+    for (int i = num_a; i < num_dishes; i++) {
+        cout << dishes[i].label << " ";
+    }
+    cout << "\n";
+
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int payment, num_bills;
+    int bills[] = {100, 50, 20, 10, 5, 1}; // array of existing bills
+    int num_bills_array[6] = {0}; // array to store the number of bills
+
+    // read payment amount from user
+    cout << "Enter total payment: ";
+    cin >> payment;
+
+    // calculate minimum number of bills
+    for (int i = 0; i < 6; i++) {
+        num_bills = payment / bills[i];
+        num_bills_array[i] = num_bills;
+        payment -= num_bills * bills[i];
+    }
+
+    // print result
+    cout << "Result of minimum number of bills: " << 
+            (num_bills_array[0] + num_bills_array[1] + num_bills_array[2] + 
+            num_bills_array[3] + num_bills_array[4] + num_bills_array[5]) << endl;
+
+    cout << "$100 bill: " << num_bills_array[0] << endl;
+    cout << "$50 bill: " << num_bills_array[1] << endl;
+    cout << "$20 bill: " << num_bills_array[2] << endl;
+    cout << "$10 bill: " << num_bills_array[3] << endl;
+    cout << "$5 bill: " << num_bills_array[4] << endl;
+    cout << "$1 bill: " << num_bills_array[5] << endl;
+
+    return 0;
+}

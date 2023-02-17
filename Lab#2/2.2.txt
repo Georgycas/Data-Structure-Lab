@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number, reverse = 0, remainder;
+
+    // Get the input from the user
+    cout << "Enter a number to reverse: ";
+    cin >> number;
+
+    // Reverse the number
+    while (number != 0) {
+        remainder = number % 10;
+        reverse = reverse * 10 + remainder;
+        number /= 10;
+    }
+
+    // Display the result
+    cout << "Reverse of the given number is: " << reverse << endl;
+
+    return 0;
+}

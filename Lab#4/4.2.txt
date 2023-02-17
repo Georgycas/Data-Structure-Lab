@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int num1, num2;
+    cout << "Read the integers from keyboard: ";
+    cin >> num1 >> num2;
+    
+    int result = num1 & num2;
+    cout << "The Answer after ANDing is: " << result << endl;
+
+    return 0;
+}

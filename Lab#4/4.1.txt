@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, i;
+    bool isPrime = true;
+
+    cout << "enter any number: ";
+    cin >> num;
+
+    // Check if the number is divisible by any number other than 1 and itself
+    for(i = 2; i <= num/2; i++) {
+        if(num % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if(isPrime) {
+        cout << "prime number?: Yes" << endl;
+    } else {
+        cout << "prime number?: No" << endl;
+    }
+
+    return 0;
+}

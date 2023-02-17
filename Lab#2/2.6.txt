@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    // Get the input from the user
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    // Shift the input data to the left by three bits
+    int shifted = num << 3;
+
+    // Output the result to the console
+    cout << "The left shifted data is = " << shifted << endl;
+
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int countOnes(int n) {
+    int count = 0;
+    while (n != 0) {
+        if (n & 1) {
+            count++;
+        }
+        n = n >> 1;
+    }
+    return count;
+}
+
+int main() {
+    int num;
+    cout << "Enter decimal number: ";
+    cin >> num;
+    int ones = countOnes(num);
+    cout << "There are " << ones << " ones in given decimal number" << endl;
+    return 0;
+}

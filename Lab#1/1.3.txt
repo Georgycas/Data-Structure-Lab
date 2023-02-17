@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double principle, rate, time, simple_interest;
+
+    // Get the input from the user
+    cout << "Enter principle: ";
+    cin >> principle;
+    
+    cout << "Enter rate of interest: ";
+    cin >> rate;
+    
+    cout << "Enter time: ";
+    cin >> time;
+
+    // Calculate the simple interest
+    simple_interest = (principle * rate * time) / 100.0;
+
+    // Display the result
+    cout << "Simple interest = " << simple_interest << endl;
+
+    return 0;
+}
