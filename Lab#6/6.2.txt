@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int L, n;
+    cout << "Enter the length of the road: ";
+    cin >> L;
+    cout << "Enter how many areas are needed for new facilities: ";
+    cin >> n;
+
+    vector<int> trees(L+1, 0);
+    for (int i = 0; i < n; i++) {
+        int start, end;
+        cout << "area#" << i+1 << " staring point & ending point: ";
+        cin >> start >> end;
+        for (int j = start; j <= end; j++) {
+            trees[j] = 1;
+        }
+    }
+
+    int num_moves = 0;
+    for (int i = 0; i <= L; i++) {
+        if (trees[i] == 1) {
+            num_moves++;
+        }
+    }
+
+    cout << "Result of number of trees needed to move: " << num_moves << endl;
+
+    return 0;
+}

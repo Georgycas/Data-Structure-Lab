@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size, m, temp;
+    
+    // Read in array size and m value
+    cout << "Enter an array size: ";
+    cin >> size;
+    cout << "Enter number of rotations: ";
+    cin >> m;
+    
+    m = size - m;
+    
+    // Read in array elements
+    int arr[size];
+    cout << "Enter numbers for your array: ";
+    for (int i = 0; i < size; i++) {
+        cin >> arr[i];
+    }
+    
+    // Rotate array by m positions
+    for (int i = 0; i < m; i++) {
+        temp = arr[0];
+        for (int j = 0; j < size-1; j++) {
+            arr[j] = arr[j+1];
+        }
+        arr[size-1] = temp;
+    }
+    
+    // Print rotated array
+    cout << "\nRotated array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    
+    return 0;
+}

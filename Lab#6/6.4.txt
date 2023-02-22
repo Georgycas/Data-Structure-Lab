@@ -1,0 +1,48 @@
+#include <iostream>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    // Define the lake sizes
+    map<char, int> lakes = {{'b', 0}, {'d', 0}, {'t', 0}, {'h', 0}};
+    
+    // Read in the lake size information from each student
+    // Student A
+    lakes['d'] = 4;
+    lakes['h'] = 1;
+    lakes['b'] = 3;
+
+    // Student B
+    lakes['h'] = max(lakes['h'], 5);
+    lakes['d'] = min(lakes['d'], 2);
+    lakes['b'] = max(lakes['b'], 4);
+    lakes['t'] = max(lakes['t'], 3);
+
+    // Student C
+    lakes['h'] = min(lakes['h'], 0);
+    lakes['d'] = max(lakes['d'], 3);
+
+    // Student D
+    lakes['b'] = max(lakes['b'], 5);
+    lakes['t'] = min(lakes['t'], 0);
+    lakes['h'] = max(lakes['h'], 4);
+    lakes['d'] = max(lakes['d'], 2);
+
+    // Sort the lakes by size
+    vector<pair<char, int>> lake_vec(lakes.begin(), lakes.end());
+    sort(lake_vec.begin(), lake_vec.end(), [](const pair<char, int>& a, const pair<char, int>& b) {
+        return a.second > b.second;
+    });
+
+    // Print the lakes in order of size from big to small
+    cout << "The lakes in order of size from big to small are: ";
+    for (auto p : lake_vec) {
+        cout << p.first << " ";
+    }
+    cout << endl;
+
+    return 0;
+}

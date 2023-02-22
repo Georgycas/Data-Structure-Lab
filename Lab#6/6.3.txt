@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    bool divBy3 = (num % 3 == 0);
+    bool divBy5 = (num % 5 == 0);
+    bool divBy7 = (num % 7 == 0);
+
+    if (divBy3 && divBy5 && divBy7) {
+        cout << "Divisible by 3, 5, 7\n";
+    } else if (divBy3 && divBy5) {
+        cout << "Divisible by 3, 5\n";
+    } else if (divBy3 && divBy7) {
+        cout << "Divisible by 3, 7\n";
+    } else if (divBy5 && divBy7) {
+        cout << "Divisible by 5, 7\n";
+    } else if (divBy3) {
+        cout << "Divisible by 3\n";
+    } else if (divBy5) {
+        cout << "Divisible by 5\n";
+    } else if (divBy7) {
+        cout << "Divisible by 7\n";
+    } else {
+        cout << "Prime Number\n";
+    }
+
+    return 0;
+}
